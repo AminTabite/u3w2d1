@@ -38,7 +38,7 @@ class BookList extends Component {
                   b.title.toLowerCase().includes(this.state.searchQuery)
                 )
                 .map((b) => (
-                  <Col xs={12} md={4} key={b.asin}>
+                  <Col xs={7} md={7} key={b.asin}>
                     <SingleBook
                       book={b}
                       selectedAsin={this.state.asin}
@@ -47,9 +47,10 @@ class BookList extends Component {
                   </Col>
                 ))}
             </Col>
-          </Row>
-          <Row>
-            <CommentArea asin={this.state.asin} />
+
+            <Col xs={5}>
+              <CommentArea asin={this.state.asin} />{" "}
+            </Col>
           </Row>
         </Container>
       </>

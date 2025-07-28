@@ -37,11 +37,13 @@ class CommentArea extends Component {
   };
 
   componentDidMount() {
-    this.Getcomment();
+    if (this.props.asin) {
+      this.Getcomment();
+    }
   }
 
-  componentDidUpdate(Prevprops) {
-    if (Prevprops.asin !== this.props.asin) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.asin !== this.props.asin && this.props.asin) {
       this.Getcomment();
     }
   }
